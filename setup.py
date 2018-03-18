@@ -4,19 +4,19 @@
 @author  : ilpan
 @contact : pna.dev@outlook.com
 @file    : setup.py
-@desc    :      
-@time    : 18-3-18 下午12:07 
+@desc    :
+@time    : 18-3-18 下午12:07
 """
 
 from setuptools import setup
-from genlog import __description__, __version__, __author__, __license__
+import genlog
 
 setup(
     name='genlog',
-    version=__version__,
-    description=__description__,
-    author=__author__,
-    license=__license__,
+    version=genlog.__version__,
+    description=genlog.__description__,
+    author=genlog.__author__,
+    license=genlog.__license__,
     url='http://github.com/ilpan/GenerateLog',
 
     python_requires='>=3.6',
@@ -33,7 +33,7 @@ setup(
 
     entry_points={
         'console_scripts': [
-          'genlog = genlog.main:main'
+          'genlog = genlog.main:main',
         ],
     }
 )

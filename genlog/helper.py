@@ -37,9 +37,8 @@ class Helper:
                             help='the time(ms) that a client show wait before next generating logs')
         parser.add_argument('-u', '--user_num', type=int, default=10000, help='the num of user that will be collected')
         parser.add_argument('-l', '--remote_host_list', default="0.0.0.0:2018,0.0.0.0:2019,0.0.0.0:2020,0.0.0.0:2021",
-                            action='store_true',
                             help='remote host list that we send logs to (format: ip:port,ip:port...)')
-        parser.add_argument('-s', '--show', default=False, help='show send logs info')
+        parser.add_argument('-s', '--show', action='store_true', help='show send logs info')
 
         # get arguments
         args = parser.parse_args()
@@ -64,9 +63,11 @@ class Helper:
                 print(e)
                 sys.exit(1)
 
+        if args.show:
+            self._show = True
 
         self._client_num, self._interval, self._user_num = args.client_num, args.interval, args.user_num
-        self._show = args.show
+     
 
     @property
     def client_num(self):

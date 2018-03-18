@@ -4,12 +4,12 @@
 @author  : ilpan
 @contact : pna.dev@outlook.com
 @file    : __init__.py.py
-@desc    :      
-@time    : 18-3-16 上午11:15 
+@desc    :
+@time    : 18-3-16 上午11:15
 """
 
 __description__ = "genlog: a tool that can randomly generate logs and send them to specified host:port"
 
-__version__ = '0.1.0'
+__version__ = '0.2.0'
 __author__  = 'ilpan'
 __license__   = 'MIT'
