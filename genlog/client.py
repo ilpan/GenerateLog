@@ -5,7 +5,7 @@
 @contact : pna.dev@outlook.com
 @file    : client.py
 @desc    : 将日志信息发送到相应的flume agent
-@time    : 18-3-16 上午11:48 
+@time    : 18-3-16 上午11:48
 """
 
 import json
@@ -14,7 +14,7 @@ import time
 from datetime import datetime
 from random import randint, randrange
 
-from conf import *
+from genlog.conf import *
 
 class Client:
     def __init__(self, remote_host):

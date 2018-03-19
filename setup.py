@@ -8,7 +8,7 @@
 @time    : 18-3-18 下午12:07
 """
 
-from setuptools import setup
+from setuptools import setup, find_packages
 import genlog
 
 setup(
@@ -16,8 +16,10 @@ setup(
     version=genlog.__version__,
     description=genlog.__description__,
     author=genlog.__author__,
+    author_email=genlog.__author_email__,
     license=genlog.__license__,
     url='http://github.com/ilpan/GenerateLog',
+    packages=find_packages(),
 
     python_requires='>=3.6',
     classifiers=[
@@ -33,7 +35,7 @@ setup(
 
     entry_points={
         'console_scripts': [
-          'genlog = genlog.main:main',
+          'genlog = genlog.main:main'
         ],
     }
 )

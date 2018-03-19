@@ -4,17 +4,18 @@
 @author  : ilpan
 @contact : pna.dev@outlook.com
 @file    : main.py
-@desc    :      
-@time    : 18-3-16 上午11:38 
+@desc    :
+@time    : 18-3-16 上午11:38
 """
 
 import asyncio
 
-from client import *
-from conf import *
+from genlog.client import *
+from genlog.conf import *
 
 def init_client():
-    return (Client(flumes[randint(0,3)]) for i in range(100))
+    flume_num = len(flumes)
+    return (Client(flumes[randint(0,flume_num-1)]) for i in range(100))
 
 async def run(client):
     while True:

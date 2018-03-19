@@ -15,8 +15,8 @@
 import argparse
 import sys
 
-from __init__ import __description__, __version__
-from exception import *
+from genlog import __description__, __version__
+from genlog.exception import *
 
 class Helper:
 
@@ -48,14 +48,15 @@ class Helper:
             sys.exit(0)
 
         def get_ip_port(host):
+            host = host.strip()
             try:
                 ip =  host.split(':')[0]
-                port = host.split(':')[1]
+                port = int(host.split(':')[1])
                 return (ip, port)
             except IndexError:
                 raise WrongFormatError("与标准格式ip:port不一致")
 
-        if args.remote_host_list:
+        if args.remote_host_list is not None:
             host_list = args.remote_host_list.split(',')
             try:
                 self._remote_host_list = [get_ip_port(host) for host in host_list]
@@ -66,8 +67,12 @@ class Helper:
         if args.show:
             self._show = True
 
+        if args.interval <= 1000:
+            print('interval must greater than 1000(ms)')
+            sys.exit(2)
+
         self._client_num, self._interval, self._user_num = args.client_num, args.interval, args.user_num
-     
+
 
     @property
     def client_num(self):
