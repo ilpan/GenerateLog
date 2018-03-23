@@ -20,7 +20,8 @@ def init_client():
 async def run(client):
     while True:
         client.send_log_to_flume()
-        await asyncio.sleep(interval/1000)
+    #    await asyncio.sleep(interval/1000)
+        time.sleep(interval/1000)
 
 def main():
     loop = asyncio.get_event_loop()

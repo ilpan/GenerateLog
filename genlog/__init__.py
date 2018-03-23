@@ -10,7 +10,7 @@
 
 __description__ = "genlog: a tool that can randomly generate logs and send them to specified host:port"
 
-__version__ = '1.0.1'
+__version__ = '1.0.2'
 __author__  = 'ilpan'
 __license__   = 'MIT'
 __author_email__ = 'pna.dev@outlook.com'

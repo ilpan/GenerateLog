@@ -55,15 +55,15 @@ class Client:
                 break
             package_info = {
                 "package": packages[randrange(package_num)],
-                "activetime": randint(6000, interval)
+                "activetime": str(active_time)
             }
             data.append(package_info)
 
         user_behavior_log = {
-            "userId": user_id,
+            "userId": str(user_id),
             "day": day,
-            "begintime": begintime,
-            "endtime": endtime,
+            "begintime": str(begintime),
+            "endtime": str(endtime),
             "data": data
         }
         return json.dumps(user_behavior_log)
